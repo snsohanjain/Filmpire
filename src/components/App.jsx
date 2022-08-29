@@ -36,8 +36,4 @@ const App = () => {
   );
 };
 
-// <div className={classes.root}></div>
-// <main className={classes.content}>
-//         <div className={classes.toolbar} />
-
 export default App;
