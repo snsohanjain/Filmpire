@@ -3,12 +3,12 @@ import React from 'react';
 import { CssBaseline } from '@mui/material';
 import { Route, Switch } from 'react-router-dom';
 
-// hooke
+// hook
 import useStyles from './styles';
 import { Actors, MovieInformation, Movies, NavBar, Profile } from '.';
 
 const App = () => {
-  // hooke
+  // hook
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -16,7 +16,6 @@ const App = () => {
       <NavBar />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <div />
         <Switch>
           <Route exect path="/movie:id">
             <MovieInformation />
