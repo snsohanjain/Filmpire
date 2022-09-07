@@ -21,6 +21,7 @@ const NavBar = () => {
     <div>
       <AppBar position="fixed">
         <Toolbar className={classes.toolbar}>
+          {/* If it's Mobile Call this */}
           {isMobile && (
           <IconButton
             color="inherit"
@@ -32,9 +33,11 @@ const NavBar = () => {
             <Menu />
           </IconButton>
           )}
+          {/* sun type IconButton for color change of webpage it is FIXED */}
           <IconButton color="inherit" sx={{ ml: 1 }} onClick={() => {}}>
             {theme.palette.mode === 'dark' ? <Brightness7 /> : <Brightness4 />}
           </IconButton>
+          {/* If it's Not Mobile Call this */}
           {!isMobile && 'Search...'}
           <div>
             {!isAuthentricated ? (

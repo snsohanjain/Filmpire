@@ -2,14 +2,18 @@
 import React, { useState, useEffect } from 'react';
 import { Box, CircularProgress, useMediaQuery, Typography } from '@mui/material';
 import { useSelector } from 'react-redux';
+import { selectGenreOrCategory } from '../../features/currentGenreOrCategory';
 
 // hook
 import { useGetMoviesQuery } from '../../services/TMDB';
 import { MovieList } from '..';
 
+// Movies.jsx file is use to display the data comming from Tmdb Api
 const Movies = () => {
-  // hook
-  const { data, error, isFetching } = useGetMoviesQuery();
+  const [page, setPage] = useState(1);
+  const { genreIdOrCategoryName } = useSelector((state) => state.currentGenreOrCategory);
+  // hook from tmdb Api endpoint
+  const { data, error, isFetching } = useGetMoviesQuery({ genreIdOrCategoryName, page });
   if (isFetching) {
     return (
       <Box display="flex" justifyContent="center">
